@@ -1,0 +1,83 @@
+<!-- id*=it -->
+<div class="main-body" name="mainbody">
+<div class="container" name="bodyer">
+<div style="float:left;width:100%; box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 14px 0 rgba(0,0,0,0.19);">
+	<ol class="breadcrumb" style="border-radius:0;background-color:#ececec;cursor:default;">
+		<li><a href="javascript:void(0)" id="it-title-back">« Back</a></li>
+		<li class="active"><span id="it-title-productname">Product：<span></span></span></li>	
+	</ol>
+
+	<!-- Abstract -->
+	<div style="float:left;width:45%;margin-left:90px">
+		<table class="table mystock-table">
+			<tbody>				
+				<tr>
+					<th style="border-top:none">Item Code:</th>
+					<td style="border-top:none" id="it-code"></td>
+				</tr>
+				<tr>
+					<th>Detail:</th>
+					<td id="it-detail"></td>
+				</tr>
+				<tr>
+					<th>Maker:</th>
+					<td id="it-maker"></td>
+				</tr>
+				<tr>
+					<th>Classification:</th>
+					<td id="it-kind"></td>
+				</tr>
+				<tr>
+					<th>Unit:</th>
+					<td id="it-unit"></td>
+				</tr>	
+				<tr>
+					<th>Description:</th>
+					<td id="it-description"></td>
+				</tr>							
+			</tbody>
+		</table>
+	</div>
+
+	<div style="float:right;width:40%;margin-right:60px;">
+		<div style="width:100%;float:right;padding-right:25%;padding-left:25%;">
+			<img id="it-img" src="img/blank.jpg" class="item-img" alt="Could not find picture" style="width:100%" onerror="javascript:this.src='img/blank.jpg';this.title='Could not find picture.'">
+		</div>
+	</div>
+
+	<div style="width:calc(100% - 240px);clear:both;margin-left:90px;margin-right:150px;padding-top:30px;padding-bottom:20px">
+		<h4>Product Batch: </h4>
+		<table class="table ft greyTrTable tr-hover-table" stype="sf" id="it-batch-table">
+			<thead>
+				<tr>
+					<th sdt="string">Batch <span style="font-size:13px;" class="glyphicon glyphicon-plus edit-span" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Add product batch." id="it-add-itembatch"></span></th>
+					<th sdt="date">Expiration Date</th>
+					<th sdt="date">In-stock Deadline</th>
+					<th sdt="string">Cost</th>
+					<th sdt="string">Cost Unit</th>
+					<th sdt="string">Description</th>
+										
+				</tr>
+			</thead>
+			<tbody id="it-batch-tbody"></tbody>
+		</table>
+	</div>
+
+	<div style="width:calc(100% - 240px);clear:both;margin-left:90px;margin-right:150px;padding-top:30px;padding-bottom:20px">
+		<h4>Stock Information:</h4>
+		<table class="table ft greyTrTable tr-hover-table" stype="s" id="it-stock-table">
+			<thead>
+				<tr>
+					<th sdt="string">Batch</th>
+					<th sdt="string">Warehouse</th>
+					<th sdt="date">Expiration Date</th>					
+					<th sdt="number">Amount</th>
+										
+				</tr>
+			</thead>
+			<tbody id="it-stock-tbody"></tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>

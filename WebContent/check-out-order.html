@@ -1,0 +1,279 @@
+<!-- id*=nco -->
+<div class="main-body" name="mainbody">
+	<div class="container" name="bodyer">
+	<!-- left big block -->	
+	<div class="big-block-left">
+		<!-- 1.order detail -->
+		<div class="order-block order-block-left" style="margin-bottom: 1px;">
+			<h3 class="order-block-left-title">Order Detail:</h3>
+
+			<div class="form-group hide">
+				<label>Check-out ID:*</label> 
+				<input type="text" class="form-control" id="nco-title-order-id">
+			</div>
+
+			<div class="form-group hide">
+				<label>Applyer:*</label> 
+				<input type="text" class="form-control" id="nco-applyer">
+			</div>
+
+			<div class="form-group hide">
+				<label>Apply Time:*</label>
+				<input type="text" class="form-control" id="nco-apply-time">
+			</div>
+
+		
+			<div class="form-group">
+				<label>Contact Person of Receiver:</label> 
+				<div style="padding-left:30px; width:100%" id="nco-contact-div">
+					<div style="position:relative; margin-bottom: 15px;" id="nco-search-contact-div">
+						<span>
+							<input type="text" class="form-control" placeholder="Search Contact" id="nco-contact-person">
+							<span class="glyphicon glyphicon-search" style="position:absolute;right:10px;top:9px;color:#888888;font-weight:bold"></span>
+						</span>
+						<ul class="form-control recom-ul hide"></ul>
+						<div class="form-add-new" id="nco-new-contact">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create new contact
+						</div>
+					</div>
+					
+					<form class="form-horizontal" autocomplete="off">
+					  <div class="form-group">
+					    <label>Name:*</label>
+					    <input type="text" class="form-control" id="nco-contact-person-name" placeholder="Name of Contact Person">
+					  </div>
+					  <div class="form-group">
+					    <label>Tel:</label>
+					    <input type="email" class="form-control" id="nco-contact-person-tel" placeholder="Telephone Number">
+					  </div>
+					  <div class="form-group">
+					    <label>Company:</label>
+					    <input type="email" class="form-control" id="nco-contact-person-company" placeholder="Company Name">
+					  </div>
+					</form>	
+				</div>				
+			</div>
+
+			<div class="form-group">
+				<label>Receiver Address:</label> 
+				<input type="text" class="form-control" placeholder="" id="nco-receiver-address">
+			</div>
+
+			<div class="form-group">
+				<label>Check-out Warehouse:*</label>
+				<select class="form-control" id="nco-whouse-select">				
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Expected Departure Date:</label>
+				<input type="date" class="form-control" placeholder="" id="nco-delivery-date">
+			</div>
+
+			<div class="form-group">
+				<label>Reason:</label>
+				<select class="form-control" id="nco-reason">
+					<option value="Sold">Sold</option>
+					<option value="Ordinary Check-out">Ordinary Check-out</option>
+					<option value="Regular Check-out">Regular Check-out</option>					
+					<option value="Other">Other</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Comment:</label>
+				<textarea class="form-control" style="min-height:100px" placeholder="Comment on this application." id="nco-outorder-comment"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label>Products:*</label>
+				<table class="table table-hover table-condensed ft" style="margin-left:25px; width: calc(100% - 25px); color:#6d6d6d" id="nco-product-table">
+					<thead><tr><th>Product Code</th><th>Product Name</th><th>Batch No</th><th id="nco-product-table-th-amount" style="width:130px;">Amount</th></tr></thead>
+					<tbody></tbody>
+					<tfoot>
+						<tr>
+							<th colspan="100%">
+								<div style="position:relative">
+									<input type="text" class="form-control" placeholder="  Search Product" id="nco-search-product">
+									<ul class="form-control recom-ul hide"></ul>
+								</div>
+								<!-- <div class="form-add-new" id="nco-new-product"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create new product</div> -->
+							</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<div class="form-group">
+				<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="nco-submit-warning"></span></label>
+			</div>
+
+			<div class="form-group" id="nco-submit-warning-risk">
+				<!-- <label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span> Out-of-stock Risks:<span id=""></span></label><br>
+				<span style="margin-left:10px;color:#f55454;cursor:pointer;">Forecast CPu01(123123) only 21 left on 2018/23/23.</span> -->
+			</div>
+
+			<button type="submit" class="btn btn-success" id="nco-submit-outorder">
+				<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Submit Application
+			</button>
+
+			<span style="position: relative;bottom: -7px;left: 10px;text-decoration: underline;font-weight: bold;color: #d65b5b;cursor:pointer;" id="nco-submit-outorder-risk">
+				I Know Risks and Still Submit
+			</span>	
+		</div>	
+
+		<!-- 2.order status history -->
+		<div class="order-block order-block-left" style="margin-bottom: 2px;clear:left;" id="nco-orderhistory-div">
+			<h3 class="order-block-left-title">Status Change History:</h3>
+			<table class="table table-hover table-condensed ft top-align-table" style="margin-left:25px; width: calc(100% - 25px); color:#6d6d6d" id="nco-orderhistory-table">					
+				<tbody></tbody>
+			</table>
+		</div>	
+
+	</div>
+	
+	<!-- right big block -->
+	<div class="big-block-right">
+		<!-- 3. current order status -->
+		<div class="order-block order-block-right" id="nco-currentstatus-div">
+			<h3 class="order-block-right-title">Order Status:<span style="float:right;padding-right:10px" class="order-status-color-1" id="nco-title-order-status">Creating</span></h3>
+			<div class="form-group">	
+				<span class="" style="font-weight: bold;color: #de9494;" id="nco-nextstep-info"><span class="glyphicon glyphicon-info-sign"></span> NEXT STEP:
+					<span id="nco-status-message-1"><br/><span style="color:#e86b6b">"Approve"</span> or <span style="color:#dec22e">"Deny"</span> this check-out application, and edit <span style="color:#e86b6b">"Allocate picking task"</span> if "Approve".</span>
+					<span id="nco-status-message-4"><br/>Please pick and check cargo. After that please change status to <span style="color:#e86b6b"> "Picking Done" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Picking Result"</span>.</span>
+					<span id="nco-status-message-5"><br/>Please change status to <span style="color:#e86b6b"> "Check-out Success" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Transport Information"</span> if transport starts.</span>
+				</span>	
+			</div>	
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nco-viewprefix-transport" style="float:none;">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View transport information
+				</div>
+			</div>	
+			<div class="order-block-right-subdiv" id="nco-viewprefix-transport-div">	
+				<div class="form-group">
+					<label>Transport Company:</label>
+					<input class="form-control text-cursor" disabled="true" id="nco-transport-company-view"/>
+				</div>
+				<div class="form-group">
+					<label>Transport No:</label>
+					<input class="form-control text-cursor" disabled="true" id="nco-transport-num-view"/>
+				</div>
+				<div class="form-group">
+					<label>Departure Time:</label>
+					<input type="date" class="form-control text-cursor" disabled="true" id="nco-transport-delivery-view"/>
+				</div>
+				<div class="form-group">
+					<label>Expected Arrival Time:</label>
+					<input type="date" class="form-control text-cursor" disabled="true" id="nco-transport-arrival-view"/>
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nco-viewprefix-picking" style="float:none">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View picking information
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nco-viewprefix-picking-div">
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nco-picking-table-view">
+					<thead><tr><th>Product</th><th>Place Area</th><th>Amount</th></tr></thead>
+					<tbody></tbody>
+					<tfoot>						
+						<tr><td colspan="100%"><span style="padding-left:20px;font-weight:bold"><span class="glyphicon glyphicon-user"></span> Operator:&nbsp;<span name="picking-operator" style="text-decoration:underline;cursor:pointer"></span></span></td></tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+		
+
+		<!-- 4.update status -->
+		<div class="order-block order-block-right" style="padding-top:0px;margin-top:2px;clear:right;" id="nco-updatestatus-div">
+			<h3 class="order-block-right-title">Update Status:</h3>
+			<div class="form-group">
+				<select class="form-control bold-select" id="nco-select-new-status" style="width:100%;margin-left:auto;margin-right:auto;">				
+				</select>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nco-newprefix-transport" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Transport information
+				</div>
+			</div>	
+			<div class="order-block-right-subdiv" id="nco-newprefix-transport-div">	
+				<div class="form-group">
+					<label>Transport Company:</label>
+					<input class="form-control" id="nco-transport-company-new"/>
+				</div>
+				<div class="form-group">
+					<label>Transport No:</label>
+					<input class="form-control" id="nco-transport-num-new"/>
+				</div>
+				<div class="form-group">
+					<label>Departure Time:</label>
+					<input type="date" class="form-control" id="nco-transport-delivery-new"/>
+				</div>
+				<div class="form-group">
+					<label>Expected Arrival Time:</label>
+					<input type="date" class="form-control" id="nco-transport-arrival-new">
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nco-newprefix-task" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Allocate picking task
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nco-newprefix-task-div">	
+				<div class="form-group">
+					<label>Assign Picking Worker:</label>
+					<div style="position:relative">
+						<input type="text" class="form-control" placeholder="Select worker for picking job" id="nco-picking-cid-new">
+							<ul class="form-control recom-ul hide"></ul>
+					</div>	
+				</div>				
+			</div>
+
+
+			<div class="form-group">
+				<div class="form-add-new no-padding" id="nco-newprefix-picking" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Picking Result
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nco-newprefix-picking-div">
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nco-picking-table-new">
+					<thead><tr><th>Product</th><th>Place Area</th><th style="width: 150px;">Amount</th></tr></thead>
+					<tbody></tbody>	
+					<tfoot><tr><td colspan="100%">
+						<div class="form-add-new" id="nco-add-pick-record" style="float:none;">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Picking Record
+						</div>
+					</td></tr></tfoot>				
+				</table>
+			</div>
+
+			<div class="form-group">
+				<label>Comment:</label>
+				<textarea id="nco-update-outorder-comment" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="nco-updatestatus-warning"></span></label>
+			</div>
+			<div class="form-group" id="nco-updatestatus-warning-risk">
+				<!-- <label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span> Out-of-stock Risk:<span id=""></span></label><br>
+				<span style="margin-left:10px;color:#ff2f2f;cursor:pointer;">1. Forecasdsdsdsdst CPu01(123123) only 21 available on 2018/23/23.</span> -->
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success" id="nco-update-outorder">
+					<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save
+				</button>
+				<span style="position: relative;bottom: -7px;left: 10px;text-decoration: underline;font-weight: bold;color: #d65b5b;cursor:pointer" id="nco-update-outorder-risk">
+					I Know Risks and Still Save
+				</span>	
+			</div>
+		</div>
+	</div>
+	
+	</div>
+</div>

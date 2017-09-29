@@ -1,0 +1,5 @@
+id,		order_type,		order_id,		company,			num,	delivery_date,		arrival_date
+1,		1,				186000,			American RoadWay,	a0283,	2017-05-29,			2017-07-02
+2,		2,				116000,			China RoadWay,		b0113,	2017-07-02,			2017-07-05
+3,		3,				209000,			Stone RoadWay,		c0933,	2017-07-02,			2017-07-07
+4,		2,				116001,			China Flight,		b0113,	2017-07-11,			2017-07-13

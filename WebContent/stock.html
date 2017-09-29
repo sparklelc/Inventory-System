@@ -1,0 +1,127 @@
+<!-- id*=s -->
+<div class="main-body" name="mainbody">
+<div class="container" name="bodyer">
+<div style="float:left;width:100%; box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 14px 0 rgba(0,0,0,0.19);">
+	<ol class="breadcrumb" style="border-radius:0;background-color:#ececec;cursor:default;">
+		<li><a href="javascript:void(0)" id="s-title-back">« Back</a></li>
+		<li class="active" style="cursor:default"><span id="s-title-productname" style="cursor:default">Product：<a style="cursor:pointer"></a></span></li>
+		<li class="active" style="cursor:default"><span id="s-title-productbatchname" style="cursor:default">Batch No：<span style="cursor:default"></span></span></li>
+		<li class="active" style="cursor:default"><span id="s-title-stock-warehouse" style="cursor:default">Warehouse：<a style="cursor:pointer"></a></span></li>
+	</ol>
+
+	<!-- Abstract -->
+	<div style="float:left;width:45%;margin-left:90px">
+		<table class="table mystock-table">
+			<tbody>				
+				<tr>
+					<th style="border-top:none">Item Code:</th>
+					<td style="border-top:none" id="s-code"></td>
+				</tr>
+				<tr>
+					<th>Detail:</th>
+					<td id="s-detail"></td>
+				</tr>
+				<tr>
+					<th>Maker:</th>
+					<td id="s-maker"></td>
+				</tr>
+				<tr>
+					<th>Classification:</th>
+					<td id="s-kind"></td>
+				</tr>
+				<tr>
+					<th>Unit:</th>
+					<td id="s-unit"></td>
+				</tr>				
+				<tr>
+					<th>Amount:</th>
+					<td id="s-balance"></td>
+				</tr>
+				<tr>
+					<th>Warehouse:</th>
+					<td id="s-whouse"></td>
+				</tr>
+				<tr>
+					<th>Batch Num:</th>
+					<td id="s-itembatch-lot"></td>
+				</tr>
+				<tr>
+					<th>Unit Cost:</th>
+					<td id="s-price"></td>
+				</tr>
+				<tr>
+					<th>Expiration Date:</th>
+					<td id="s-itembatch-expire"></td>
+				</tr>
+				<tr>
+					<th>In-stock Deadline:</th>
+					<td id="s-itembatch-deadline"></td>
+				</tr>
+				<tr>
+					<th>Future Change:</th>
+					<td id="s-stock-preditcion"><span class="glyphicon glyphicon-menu-hamburger" style="cursor:pointer" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to see future change."></span></td>
+				</tr>
+				<tr>
+					<th>Minimum Alert:</th>
+					<td id="s-stock-inshort-alert"></td>
+				</tr>				
+			</tbody>
+		</table>
+	</div>
+
+	<div style="float:right;width:40%;margin-right:60px;background-color:#6e9fd6;color:white;border-radius:2px;">
+		<div>
+			<h4 style="float: right;font-family:Raleway, sans-serif;font-size: 100px;padding-right: 20px;"><span id="s-blueblock-amount" style="font-family: Helvetica;">100</span><span style="font-size:20px;"> in-stock</span></h4>
+			<h4 style="font-family:Raleway, sans-serif;font-size: 36px;padding-left: 20px;">In "<span id="s-blueblock-whouse">Shanghai</span>"</h4>
+		</div>
+		<div style="clear:both;background-color:white;margin:2px 0px;height:5px;"></div>
+		<div style="clear:both;	;margin:2px 3px;margin-left:20px"><h4>Place Area:</h4>
+			<table class="table whitetable" style="width:45%;margin-left:30%" id="s-blueblock-place-table"><thead><tr><th>Area</th><th>Amount</th></tr></thead><tbody></tbody></table>
+		</div>
+	</div>
+
+	<!-- <div class="panel panel-default" style="margin-top: 20px;">
+		<div class="panel-heading">
+			<span class="glyphicon glyphicon-pencil"></span> Storage/Retrieval
+		</div>
+		<div class="panel-body">
+			<div class="form">
+				<input type="hidden" name="id">
+				<div class="form-group">
+					<label>Date</label> <input type="date" class="form-control"
+					name="date">
+				</div>
+				<div class="form-group">
+					<label>Amount</label> <input type="number" class="form-control"
+					name="qty" value="0" placeholder="出庫はマイナス、入庫はプラス">
+				</div>
+				<div class="form-group">
+					<label>Comment</label>
+					<textarea class="form-control" name="memo"
+					placeholder="must put comment"></textarea>
+				</div>
+				<button type="submit" class="btn btn-success" id="s-update">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					Update
+				</button>
+			</div>
+		</div>
+	</div> -->
+	<div style="width:calc(100% - 150px);clear:both;margin-left:90px;margin-right:60px;padding-top:30px;padding-bottom:20px" id="stock-history-table-div">
+		<h4 style="cursor:default">Change History:</h4>
+		<table class="table ft greyTrTable tr-hover-table" stype="sf" id="stock-history-table">
+			<thead>
+				<tr>
+					<th sdt="date">Date</th>
+					<th sdt="number">Change</th>
+					<th sdt="number">Amount</th>
+					<th sdt="string">Comment</th>
+					<th sdt="string">Order</th>
+				</tr>
+			</thead>
+			<tbody id="s-tbody-transs"></tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>

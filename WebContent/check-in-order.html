@@ -1,0 +1,285 @@
+<!-- id*=nci -->
+<div class="main-body" name="mainbody">
+	<div class="container" name="bodyer">
+	<!-- left big block -->	
+	<div class="big-block-left">
+		<!-- 1.order detail -->
+		<div class="order-block order-block-left" style="margin-bottom: 1px;">
+			<h3 class="order-block-left-title">Order Detail:</h3>
+
+			<div class="form-group hide">
+				<label>Check-in ID:*</label> 
+				<input type="text" class="form-control" id="nci-title-order-id">
+			</div>
+
+			<div class="form-group hide">
+				<label>Applyer:*</label> 
+				<input type="text" class="form-control" id="nci-applyer">
+			</div>
+
+			<div class="form-group hide">
+				<label>Apply Time:*</label> 
+				<input type="text" class="form-control" id="nci-apply-time">
+			</div>
+
+		
+			<div class="form-group">
+				<label>Contact Person of Supplier:*</label> 
+				<div style="position:relative">
+					<input type="text" class="form-control" placeholder="Please select one. Other input is not allowed." id="nci-contact-supplier">
+						<ul class="form-control recom-ul hide"></ul>
+				</div>		
+				<div class="form-add-new" id="nci-new-contact">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create new contact
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label>Supplier Company:*</label> 
+				<input type="text" class="form-control" placeholder="" id="nci-company-supplier">
+			</div>
+
+			<div class="form-group">
+				<label>Check-in Warehouse:*</label>
+				<select class="form-control" id="nci-whouse-select">				
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Expected Arrival Date:</label>
+				<input type="date" class="form-control" placeholder="" id="nci-arrival-date">
+			</div>
+
+			<div class="form-group">
+				<label>Reason:</label>
+				<select class="form-control" id="nci-reason">
+					<option value="Ordinary Check-in">Ordinary Check-in</option>
+					<option value="Regular Check-in">Regular Check-in</option>
+					<option value="Replenish Stock">Replenish Stock</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Comment:</label>
+				<textarea class="form-control" style="min-height:100px" placeholder="Comment on this application." id="nci-inorder-comment"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label>Products:*</label>
+				<table class="table table-hover table-condensed ft" style="margin-left:25px; width: calc(100% - 25px); color:#6d6d6d" id="nci-product-table">
+					<thead><tr><th>Product Code</th><th>Product Name</th><th>Batch No</th><th id="nci-product-table-th-amount" style="width:130px;">Amount</th></tr></thead>
+					<tbody></tbody>
+					<tfoot>
+						<tr>
+							<th colspan="100%">
+								<div style="position:relative">
+									<input type="text" class="form-control" placeholder="  Search Product" id="nci-search-product">
+										<ul class="form-control recom-ul hide"></ul>
+								</div>
+								<div class="form-add-new" id="nci-new-product"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create new product</div>
+							</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<div class="form-group">
+				<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="nci-submit-warning"></span></label>
+			</div>
+
+			<button type="submit" class="btn btn-success" id="nci-submit-inorder">
+				<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Submit Application
+			</button>	
+		</div>	
+
+		<!-- 2.order status history -->
+		<div class="order-block order-block-left" style="margin-bottom: 2px;clear:left;" id="nci-orderhistory-div">
+			<h3 class="order-block-left-title">Status Change History:</h3>
+			<table class="table table-hover table-condensed ft top-align-table" style="margin-left:25px; width: calc(100% - 25px); color:#6d6d6d" id="nci-orderhistory-table">
+					<!-- <thead><tr><th>Product Code</th><th>Product Name</th><th>Batch No</th><th>Amount</th></tr></thead> -->
+					<tbody></tbody>
+					<!-- <tfoot>
+						<tr>
+							<th colspan="100%">
+								<div style="position:relative">
+									<input type="text" class="form-control" placeholder="  Search Product" id="nci-search-product">
+										<ul class="form-control recom-ul hide"></ul>
+								</div>
+								<div class="form-add-new" id="nci-new-product"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create new product</div>
+							</th>
+						</tr>
+					</tfoot> -->
+			</table>
+		</div>	
+
+	</div>
+	
+	<!-- right big block -->
+	<div class="big-block-right">
+		<!-- 3. current order status -->
+		<div class="order-block order-block-right" id="nci-currentstatus-div">
+			<h3 class="order-block-right-title">Order Status:<span style="float:right;padding-right:10px" class="order-status-color-1" id="nci-title-order-status">Creating</span></h3>
+			<div class="form-group">	
+				<span class="hide" style="font-weight: bold;color: #de9494;" id="nci-nextstep-info"><span class="glyphicon glyphicon-info-sign"></span> NEXT STEP:
+					<span id="nci-status-message-1"><br/><span style="color:#e86b6b">"Approve"</span> or <span style="color:#dec22e">"Deny"</span> this check-in application.</span>
+					<span id="nci-status-message-4"><br/>Please change status to <span style="color:#e86b6b">"Transporting"</span> if transport starts, and edit <span style="color:#e86b6b">"<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Transport Information"</span>.</span>
+					<span id="nci-status-message-5"><br/>Please change status to <span style="color:#e86b6b">"Received"</span> if cargo received, and edit <span style="color:#e86b6b">"Allocate inspection/placing tasks"</span>.</span>
+					<span id="nci-status-message-6"><br/>Please check and inspect cargo. Change status to <span style="color:#e86b6b"> "Inspection Passed" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inspection Result"</span> if pass. Else change status to <span style="color:#dec22e">"Return"</span> and return cargo.</span>
+					<span id="nci-status-message-8"><br/>Please place cargo into warehouse. Change status to <span style="color:#e86b6b"> "Check-in Success" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Placing Result"</span>.</span>
+				</span>
+			</div>	
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nci-viewprefix-transport" style="float:none;">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View transport information
+				</div>
+			</div>	
+			<div class="order-block-right-subdiv" id="nci-viewprefix-transport-div">	
+				<div class="form-group">
+					<label>Transport Company:</label>
+					<input class="form-control text-cursor" disabled="true" id="nci-transport-company-view"/>
+				</div>
+				<div class="form-group">
+					<label>Transport No:</label>
+					<input class="form-control text-cursor" disabled="true" id="nci-transport-num-view"/>
+				</div>
+				<div class="form-group">
+					<label>Departure Time:</label>
+					<input type="date" class="form-control text-cursor" disabled="true" id="nci-transport-delivery-view"/>
+				</div>
+				<div class="form-group">
+					<label>Expected Arrival Time:</label>
+					<input type="date" class="form-control text-cursor" disabled="true" id="nci-transport-arrival-view"/>
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nci-viewprefix-inspection" style="float:none">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View inspection information
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nci-viewprefix-inspection-div">
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nci-inspection-table-view">
+					<thead><tr><th>Product</th><th>Batch</th><th>Plan Num</th><th>Actual Num</th></tr></thead>
+					<tbody></tbody>
+					<tfoot><tr><td colspan="100%"><span style="padding-left:20px;font-weight:bold"><span class="glyphicon glyphicon-user"></span> Operator:&nbsp;<span name="inspection-operator" style="text-decoration:underline;cursor:pointer"></span></span></td></tr></tfoot>
+				</table>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nci-viewprefix-placing" style="float:none">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View placing information
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nci-viewprefix-placing-div">	
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nci-placing-table-view">
+					<thead><tr><th>Product</th><th>Batch</th><th>Place Area</th></tr></thead>
+					<tbody></tbody>	
+					<tfoot><tr><td colspan="100%"><span style="padding-left:20px;font-weight:bold"><span class="glyphicon glyphicon-user"></span> Operator:&nbsp;<span name="placing-operator" style="text-decoration:underline;cursor:pointer"></span></span></td></tr></tfoot>				
+				</table>
+			</div>
+		</div>
+
+		
+
+		<!-- 4.update status -->
+		<div class="order-block order-block-right" style="padding-top:0px;margin-top:2px;clear:right;" id="nci-updatestatus-div">
+			<h3 class="order-block-right-title">Update Status:</h3>
+			<div class="form-group">
+				<select class="form-control bold-select" id="nci-select-new-status" style="width:100%;margin-left:auto;margin-right:auto;">				
+				</select>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nci-newprefix-transport" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Transport information
+				</div>
+			</div>	
+			<div class="order-block-right-subdiv" id="nci-newprefix-transport-div">	
+				<div class="form-group">
+					<label>Transport Company:</label>
+					<input class="form-control" id="nci-transport-company-new"/>
+				</div>
+				<div class="form-group">
+					<label>Transport No:</label>
+					<input class="form-control" id="nci-transport-num-new"/>
+				</div>
+				<div class="form-group">
+					<label>Departure Time:</label>
+					<input type="date" class="form-control" id="nci-transport-delivery-new"/>
+				</div>
+				<div class="form-group">
+					<label>Expected Arrival Time:</label>
+					<input type="date" class="form-control" id="nci-transport-arrival-new">
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nci-newprefix-task" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Allocate inspection/placing tasks
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nci-newprefix-task-div">	
+				<div class="form-group">
+					<label>Assign Inspection Worker:</label>
+					<div style="position:relative">
+						<input type="text" class="form-control" placeholder="Select worker for inspection job" id="nci-inspection-cid-new">
+							<ul class="form-control recom-ul hide"></ul>
+					</div>	
+				</div>
+				<div class="form-group">
+					<label>Assign Placing Worker:</label>
+					<div style="position:relative">
+						<input type="text" class="form-control" placeholder="Select worker for placing job" id="nci-placing-cid-new">
+							<ul class="form-control recom-ul hide"></ul>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nci-newprefix-inspection" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inspection Result
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nci-newprefix-inspection-div">	
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nci-inspection-table-new">
+					<thead><tr><th>Product</th><th>Batch</th><th>Plan Num</th><th>Actual Num</th></tr></thead>
+					<tbody></tbody>					
+				</table>
+			</div>
+
+
+			<div class="form-group">
+				<div class="form-add-new no-padding" id="nci-newprefix-placing" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Placing Result
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nci-newprefix-placing-div">	
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nci-placing-table-new">
+					<thead><tr><th>Product</th><th>Batch</th><th>Place Area</th></tr></thead>
+					<tbody></tbody>					
+				</table>
+			</div>
+
+			<div class="form-group">
+				<label>Comment:</label>
+				<textarea id="nci-update-inorder-comment" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="nci-updatestatus-warning"></span></label>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success" id="nci-update-inorder">
+					<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save
+				</button>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+</div>

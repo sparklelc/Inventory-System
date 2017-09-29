@@ -1,0 +1,5 @@
+id,		order_id,	order_type,		itembatch_id,	balance,	actual_balance,		place_in
+1,  	186000,		1,				1,				16,			16,					
+2,  	116000,		2,				1,				16,			,					
+3,  	209000,		3,				1,				8,			8,	
+4,  	116001,		2,				2,				60,			,						

@@ -1,0 +1,5 @@
+id, emp_num, 	name, 	gender, tel, 			email, 				title, 				company,				isActive
+1, 	RDE051, 	Tom, 	1, 		19284762834, 	228383@qq.com, 		Sales manager, 		RDE Company,			1
+2, 	IBM102, 	Hunne, 	2, 		11133237282, 	huee@163.com, 		Vice president, 	IBM,					1
+3, 	YUN023, 	Toddy, 	1, 		16783791804, 	lack_to@qq.com, 	Transporter, 		YuanTong,				1
+4, 	AMR384, 	Chris, 	2, 		38898598994, 	to2to2@qq.com, 		Shipping clerk, 	American Roadway,		1

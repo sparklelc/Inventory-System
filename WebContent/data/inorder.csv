@@ -1,0 +1,2 @@
+id,			applyer_cid,	apply_time,				update_time,			status,		reason, 			comment,									supplier_name,	supplier_cid,	supplier_type,	whouse_id
+186000, 	1,				2017-05-28 23:00:23,	2017-05-28 23:11:21,	4,			Regular Check-in,	After Check-in. please contact supplier.,	RDE Company,	1,				2,				1

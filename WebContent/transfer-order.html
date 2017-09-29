@@ -1,0 +1,327 @@
+<!-- id*=nct -->
+<div class="main-body" name="mainbody">
+	<div class="container" name="bodyer">
+	<!-- left big block -->	
+	<div class="big-block-left">
+		<!-- 1.order detail -->
+		<div class="order-block order-block-left" style="margin-bottom: 1px;">
+			<h3 class="order-block-left-title">Order Detail:</h3>
+
+			<div class="form-group hide">
+				<label>Transfer Order ID:*</label> 
+				<input type="text" class="form-control" id="nct-title-order-id">
+			</div>
+
+			<div class="form-group hide">
+				<label>Applyer:*</label> 
+				<input type="text" class="form-control" id="nct-applyer">
+			</div>
+
+			<div class="form-group hide">
+				<label>Apply Time:*</label>
+				<input type="text" class="form-control" id="nct-apply-time">
+			</div>
+
+			<div class="form-group">
+				<label>Check-out Warehouse:*</label>
+				<select class="form-control" id="nct-whouse-out-select">				
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Check-in Warehouse:*</label>
+				<select class="form-control" id="nct-whouse-in-select">				
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Expected Departure Date:</label>
+				<input type="date" class="form-control" placeholder="" id="nct-delivery-date">
+			</div>
+
+			<div class="form-group">
+				<label>Expected Arrival Date:</label>
+				<input type="date" class="form-control" placeholder="" id="nct-arrival-date">
+			</div>
+
+			<div class="form-group">
+				<label>Reason:</label>
+				<select class="form-control" id="nct-reason">
+					<option value="Replenish Stock">Replenish Stock</option>
+					<option value="Ordinary Transfer">Ordinary Transfer</option>
+					<option value="Regular Transfer">Regular Transfer</option>					
+					<option value="Other">Other</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label>Comment:</label>
+				<textarea class="form-control" style="min-height:100px" placeholder="Comment on this application." id="nct-transferorder-comment"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label>Products:*</label>
+				<table class="table table-hover table-condensed ft" style="margin-left:25px; width: calc(100% - 25px); color:#6d6d6d" id="nct-product-table">
+					<thead><tr><th>Product Code</th><th>Product Name</th><th>Batch No</th><th id="nct-product-table-th-amount" style="width:130px;">Amount</th></tr></thead>
+					<tbody></tbody>
+					<tfoot>
+						<tr>
+							<th colspan="100%">
+								<div style="position:relative">
+									<input type="text" class="form-control" placeholder="  Search Product" id="nct-search-product">
+									<ul class="form-control recom-ul hide"></ul>
+								</div>
+								<!-- <div class="form-add-new" id="nct-new-product"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create new product</div> -->
+							</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<div class="form-group">
+				<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="nct-submit-warning"></span></label>
+			</div>
+
+			<div class="form-group" id="nct-submit-warning-risk">
+			</div>
+
+			<button type="submit" class="btn btn-success" id="nct-submit-transferorder">
+				<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Submit Application
+			</button>	
+
+			<span style="position: relative;bottom: -7px;left: 10px;text-decoration: underline;font-weight: bold;color: #d65b5b;cursor:pointer;" id="nct-submit-transferorder-risk">
+				I Know Risks and Still Submit
+			</span>
+		</div>	
+
+		<!-- 2.order status history -->
+		<div class="order-block order-block-left" style="margin-bottom: 2px;clear:left;" id="nct-orderhistory-div">
+			<h3 class="order-block-left-title">Status Change History:</h3>
+			<table class="table table-hover table-condensed ft top-align-table" style="margin-left:25px; width: calc(100% - 25px); color:#6d6d6d" id="nct-orderhistory-table">					
+				<tbody></tbody>
+			</table>
+		</div>	
+
+	</div>
+	
+	<!-- right big block -->
+	<div class="big-block-right">
+		<!-- 3. current order status -->
+		<div class="order-block order-block-right" id="nct-currentstatus-div">
+			<h3 class="order-block-right-title">Order Status:<span style="float:right;padding-right:10px" class="order-status-color-1" id="nct-title-order-status">Creating</span></h3>
+			<div class="form-group">	
+				<span class="" style="font-weight: bold;color: #de9494;" id="nct-nextstep-info"><span class="glyphicon glyphicon-info-sign"></span> NEXT STEP:
+					<span id="nct-status-message-1"><br/><span style="color:#e86b6b">"Approve"</span> or <span style="color:#dec22e">"Deny"</span> this transfer application, and edit <span style="color:#e86b6b">"Allocate picking task"</span> if "Approve".</span>
+					<span id="nct-status-message-4"><br/>Please pick and check cargo. After that please change status to <span style="color:#e86b6b"> "Picking Done" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Picking Result"</span>.</span>
+					<span id="nct-status-message-5"><br/>Please change status to <span style="color:#e86b6b"> "Transporting" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Transport Information"</span> if transport starts.</span>
+					<span id="nct-status-message-6"><br/>Please change status to <span style="color:#e86b6b">"Received"</span> if cargo received, and edit <span style="color:#e86b6b">"Allocate inspection/placing tasks"</span>.</span>
+					<span id="nct-status-message-7"><br/>Please check and inspect cargo. Change status to <span style="color:#e86b6b"> "Inspection Passed" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inspection Result"</span>.</span>
+					<span id="nct-status-message-8"><br/>Please place cargo into warehouse. Change status to <span style="color:#e86b6b"> "Check-in Success" </span> and edit <span style="color:#e86b6b"> "<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Placing Result"</span>.</span>
+				</span>	
+			</div>	
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nct-viewprefix-transport" style="float:none;">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View transport information
+				</div>
+			</div>	
+			<div class="order-block-right-subdiv" id="nct-viewprefix-transport-div">	
+				<div class="form-group">
+					<label>Transport Company:</label>
+					<input class="form-control text-cursor" disabled="true" id="nct-transport-company-view"/>
+				</div>
+				<div class="form-group">
+					<label>Transport No:</label>
+					<input class="form-control text-cursor" disabled="true" id="nct-transport-num-view"/>
+				</div>
+				<div class="form-group">
+					<label>Departure Time:</label>
+					<input type="date" class="form-control text-cursor" disabled="true" id="nct-transport-delivery-view"/>
+				</div>
+				<div class="form-group">
+					<label>Expected Arrival Time:</label>
+					<input type="date" class="form-control text-cursor" disabled="true" id="nct-transport-arrival-view"/>
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nct-viewprefix-picking" style="float:none">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View picking information
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-viewprefix-picking-div">
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nct-picking-table-view">
+					<thead><tr><th>Product</th><th>Place Area</th><th>Amount</th></tr></thead>
+					<tbody></tbody>
+					<tfoot>						
+						<tr><td colspan="100%"><span style="padding-left:20px;font-weight:bold"><span class="glyphicon glyphicon-user"></span> Operator:&nbsp;<span name="picking-operator" style="text-decoration:underline;cursor:pointer"></span></span></td></tr>
+					</tfoot>
+				</table>
+			</div>
+
+			<div class="form-group">
+				<div class="form-add-new form-view-new no-padding" id="nct-viewprefix-inspection" style="float:none">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View inspection information
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-viewprefix-inspection-div">
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nct-inspection-table-view">
+					<thead><tr><th>Product</th><th>Batch</th><th>Plan Num</th><th>Actual Num</th></tr></thead>
+					<tbody></tbody>
+					<tfoot><tr><td colspan="100%"><span style="padding-left:20px;font-weight:bold"><span class="glyphicon glyphicon-user"></span> Operator:&nbsp;<span name="inspection-operator" style="text-decoration:underline;cursor:pointer"></span></span></td></tr></tfoot>
+				</table>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new form-view-new no-padding" id="nct-viewprefix-placing" style="float:none">
+					<span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> View placing information
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-viewprefix-placing-div">	
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nct-placing-table-view">
+					<thead><tr><th>Product</th><th>Batch</th><th>Place Area</th></tr></thead>
+					<tbody></tbody>	
+					<tfoot><tr><td colspan="100%"><span style="padding-left:20px;font-weight:bold"><span class="glyphicon glyphicon-user"></span> Operator:&nbsp;<span name="placing-operator" style="text-decoration:underline;cursor:pointer"></span></span></td></tr></tfoot>				
+				</table>
+			</div>
+		</div>
+		
+
+		<!-- 4.update status -->
+		<div class="order-block order-block-right" style="padding-top:0px;margin-top:2px;clear:right;" id="nct-updatestatus-div">
+			<h3 class="order-block-right-title">Update Status:</h3>
+			<div class="form-group">
+				<select class="form-control bold-select" id="nct-select-new-status" style="width:100%;margin-left:auto;margin-right:auto;">				
+				</select>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nct-newprefix-transport" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Transport information
+				</div>
+			</div>	
+			<div class="order-block-right-subdiv" id="nct-newprefix-transport-div">	
+				<div class="form-group">
+					<label>Transport Company:</label>
+					<input class="form-control" id="nct-transport-company-new"/>
+				</div>
+				<div class="form-group">
+					<label>Transport No:</label>
+					<input class="form-control" id="nct-transport-num-new"/>
+				</div>
+				<div class="form-group">
+					<label>Departure Time:</label>
+					<input type="date" class="form-control" id="nct-transport-delivery-new"/>
+				</div>
+				<div class="form-group">
+					<label>Expected Arrival Time:</label>
+					<input type="date" class="form-control" id="nct-transport-arrival-new">
+				</div>
+			</div>
+
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nct-newprefix-picking-task" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Allocate picking task
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-newprefix-picking-task-div">	
+				<div class="form-group">
+					<label>Assign Picking Worker:</label>
+					<div style="position:relative">
+						<input type="text" class="form-control" placeholder="Select worker for picking job" id="nct-picking-cid-new">
+							<ul class="form-control recom-ul hide"></ul>
+					</div>	
+				</div>				
+			</div>
+
+
+			<div class="form-group">
+				<div class="form-add-new no-padding" id="nct-newprefix-picking" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Picking Result
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-newprefix-picking-div">
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nct-picking-table-new">
+					<thead><tr><th>Product</th><th>Place Area</th><th style="width: 150px;">Amount</th></tr></thead>
+					<tbody></tbody>	
+					<tfoot><tr><td colspan="100%">
+						<div class="form-add-new" id="nct-add-pick-record" style="float:none;">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Picking Record
+						</div>
+					</td></tr></tfoot>				
+				</table>
+			</div>
+
+
+			<div class="form-group">
+				<div class="form-add-new no-padding" id="nct-newprefix-placing-task" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Allocate inspection/placing tasks
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-newprefix-placing-task-div">	
+				<div class="form-group">
+					<label>Assign Inspection Worker:</label>
+					<div style="position:relative">
+						<input type="text" class="form-control" placeholder="Select worker for inspection job" id="nct-inspection-cid-new">
+							<ul class="form-control recom-ul hide"></ul>
+					</div>	
+				</div>
+				<div class="form-group">
+					<label>Assign Placing Worker:</label>
+					<div style="position:relative">
+						<input type="text" class="form-control" placeholder="Select worker for placing job" id="nct-placing-cid-new">
+							<ul class="form-control recom-ul hide"></ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">	
+				<div class="form-add-new no-padding" id="nct-newprefix-inspection" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Inspection Result
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-newprefix-inspection-div">	
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nct-inspection-table-new">
+					<thead><tr><th>Product</th><th>Batch</th><th>Plan Num</th><th>Actual Num</th></tr></thead>
+					<tbody></tbody>					
+				</table>
+			</div>
+
+
+			<div class="form-group">
+				<div class="form-add-new no-padding" id="nct-newprefix-placing" style="float:none">
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Placing Result
+				</div>
+			</div>
+			<div class="order-block-right-subdiv" id="nct-newprefix-placing-div">	
+				<table class="table table-hover table-condensed ft top-align-table" style="width:100%; color:#6d6d6d" id="nct-placing-table-new">
+					<thead><tr><th>Product</th><th>Batch</th><th>Place Area</th></tr></thead>
+					<tbody></tbody>					
+				</table>
+			</div>
+
+			<div class="form-group">
+				<label>Comment:</label>
+				<textarea id="nct-update-transferorder-comment" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="nct-updatestatus-warning"></span></label>
+			</div>
+			<div class="form-group" id="nct-updatestatus-warning-risk">				
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success" id="nct-update-transferorder">
+					<span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span> Save
+				</button>
+				<span style="position: relative;bottom: -7px;left: 10px;text-decoration: underline;font-weight: bold;color: #d65b5b;cursor:pointer" id="nct-update-transferorder-risk">
+					I Know Risks and Still Save
+				</span>
+			</div>
+		</div>
+	</div>
+	
+	</div>
+</div>

@@ -1,0 +1,162 @@
+<!-- id*=add -->
+<div class="main-body" name="mainbody">
+<div class="container" name="bodyer">
+<div style="width:100%; box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 14px 0 rgba(0,0,0,0.19);">
+	
+	<div class="panel panel-default" style="margin-top: 20px;">
+		<div class="panel-heading">
+			<span class="glyphicon glyphicon-pencil"></span> Create New <span id="add-title"></span>
+		</div>
+		<div class="panel-body" style="padding-top:35px;padding-bottom:35px;">
+			<div class="form">
+			<!-- whouse -->
+				<div id="add-whouse-div">					
+					<div class="form-group">
+						<label>Name:*</label> 
+						<input type="text" class="form-control" placeholder="Name of the warehouse" id="add-whouse-name">
+					</div>
+					<div class="form-group">
+						<label>Code:*</label> 
+						<input type="text" class="form-control" placeholder="ID code of the warehouse" id="add-whouse-code">
+					</div>
+					<div class="form-group">
+						<label>Address:*</label>
+						<input type="text" class="form-control" placeholder="Address of the warehouse" id="add-whouse-addr">
+					</div>
+					<div class="form-group">
+						<label>Phone Number:</label>
+						<input type="text" class="form-control" placeholder="Phone number of this warehouse" id="add-whouse-tel">
+					</div>
+				</div>
+
+			<!-- item -->
+				<div id="add-item-div">					
+					<div class="form-group">
+						<label>Display Name:*</label> 
+						<input type="text" class="form-control" placeholder="Display name of this product" id="add-item-detail">
+					</div>
+					<div class="form-group">
+						<label>Code:*</label> 
+						<input type="text" class="form-control" placeholder="ID code of this product" id="add-item-code">
+					</div>
+					<div class="form-group">
+						<label>Classification:* <span class="glyphicon glyphicon-plus edit-span" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Add new kind." id="add-item-new-kind-span"></span></label> 
+						<input style="width:95%;display:inline" type="text" class="form-control" placeholder="Name of new kind" id="add-item-new-kind">
+						<span class="glyphicon glyphicon-ok edit-span" type="button" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Save." id="add-item-new-kind-save"></span>
+						<select class="form-control" id="add-item-kind"></select>
+					</div>
+					<div class="form-group">
+						<label>Maker:</label> 
+						<input type="text" class="form-control" placeholder="Maker of this product" id="add-item-maker">
+					</div>
+					<div class="form-group">
+						<label>Unit:</label> 
+						<select class="form-control" id="add-item-unit">
+							<option value="Pcs">Pcs</option>
+							<option value="Ctns">Ctns</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Description:</label> 
+						<textarea class="form-control" placeholder="Comment for this product" id="add-item-comment"></textarea> 
+					</div>
+				</div>
+
+			<!-- itembatch -->
+				<div id="add-itembatch-div">					
+					<div class="form-group">
+						<label>Batch Code:*</label> 
+						<input type="text" class="form-control" placeholder="Display name of this product" id="add-itembatch-lot">
+					</div>	
+					<div class="form-group">
+						<label>Expiration Date:</label> 
+						<input type="date" class="form-control" id="add-itembatch-expire">
+					</div>
+					<div class="form-group">
+						<label>Stock Deadline:</label> 
+						<input type="date" class="form-control" id="add-itembatch-deadline">
+					</div>	
+					<div class="form-group">
+						<label>Cost:</label> 
+						<input type="number" class="form-control" id="add-itembatch-cost">
+					</div>	
+					<div class="form-group">
+						<label>Cost Currency:</label> 
+						<input type="text" class="form-control" id="add-itembatch-cost-unit">
+					</div>	
+					<div class="form-group">
+						<label>Description:</label>
+						<textarea type="text" class="form-control" id="add-itembatch-description" placeholder="Description for this product."></textarea>
+					</div>			
+				</div>
+
+			<!-- contact -->
+				<div id="add-contact-div">	
+					<div class="form-group">
+						<label>Type:*</label> 
+						<select class="form-control" id="add-contact-type">
+							<option value="emp">Staff of Our Company</option>
+							<option value="partner">Cooperate Partner</option>								
+						</select>
+					</div>	
+					<div class="form-group">
+						<label>Company:*</label> 
+						<input type="text" class="form-control" placeholder="Company name" id="add-contact-company">
+					</div>				
+					<div class="form-group">
+						<label>Name:*</label> 
+						<input type="text" class="form-control" placeholder="Person name" id="add-contact-name">
+					</div>	
+					<div class="form-group">
+						<label>Employee Number:*</label> 
+						<input type="text" class="form-control" placeholder="Employee ID" id="add-contact-emp-num">
+					</div>	
+					<div class="form-group">
+						<label>Gender:*</label> 
+						<select class="form-control" id="add-contact-gender">
+							<option value=1>Male</option>
+							<option value=2>Female</option>								
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Title:*</label> 
+						<select class="form-control" id="add-contact-emp-title">
+							<option value="1">Purchase manager</option>
+							<option value="2">Inventory manager</option>
+							<option value="3">Sales manager</option>
+							<option value="4">Warehouse keeper</option>	
+							<option value="5">Warehouse worker</option>	
+							<option value="6">Shipping clerk</option>		
+						</select>
+						<input type="text" class="form-control" placeholder="Partner Title" id="add-contact-partner-title">
+					</div>	
+					<div class="form-group">
+						<label>Warehouse:*</label> 
+						<select class="form-control" id="add-contact-emp-whouse" multiple="true">							
+						</select>						
+					</div>	
+					<div class="form-group">
+						<label>Telephone Number:</label> 
+						<input type="text" class="form-control" placeholder="Telephone number" id="add-contact-tel">
+					</div>	
+					<div class="form-group">
+						<label>Email:</label> 
+						<input type="text" class="form-control" placeholder="Email address" id="add-contact-email">
+					</div>	
+				</div>
+
+			<!-- save -->
+				<div class="form-group">
+					<label style="color:#ff2f2f"><span class="glyphicon glyphicon-info-sign"></span><span id="add-submit-warning"></span></label>
+				</div>
+				<button type="submit" class="btn btn-success" id="add-save">
+					<span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+					Save
+				</button>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</div>
+</div>

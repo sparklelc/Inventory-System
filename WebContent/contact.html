@@ -1,0 +1,114 @@
+<!-- id*=ep -->
+<div class="main-body" name="mainbody">
+<div class="container" name="bodyer">
+<div style="float:left;width:100%; box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 14px 0 rgba(0,0,0,0.19);">
+	<ol class="breadcrumb" style="border-radius:0;background-color:#ececec;">
+		<li><a href="javascript:void(0)" id="ep-title-back">« Back</a></li>
+		<!-- <li class="active"><span id="ep-title-contactname">Contact: <span></span></span></li> -->	
+	</ol>
+
+	<!-- Abstract -->
+	<div style="float:left;width:45%;margin-left:90px">
+		<table class="table mystock-table">
+			<tbody>				
+				<tr>
+					<th style="border-top:none">Company:</th>
+					<td style="border-top:none" id="ep-company"></td>
+				</tr>
+				<tr>
+					<th>Name:</th>
+					<td id="ep-name"></td>
+				</tr>
+				<tr>
+					<th>Employee Number:</th>
+					<td id="ep-emp-num"></td>
+				</tr>
+				<tr>
+					<th>Job Titile:</th>
+					<td id="ep-title"></td>
+				</tr>
+					
+				<tr>
+					<th>Warehouse in Charge:</th>
+					<td id="ep-emp-whouses"></td>
+				</tr>
+				<tr>
+					<th>Gender:</th>
+					<td id="ep-gender"></td>
+				</tr>
+				<tr>
+					<th>Telephone:</th>
+					<td id="ep-tel"></td>
+				</tr>
+				<tr>
+					<th>Email:</th>
+					<td id="ep-email"></td>
+				</tr>							
+			</tbody>
+		</table>
+	</div>
+
+	<div style="float:right;width:38%;margin-right:80px;background-color:#6e9fd6;color:white;border-radius:2px;cursor:default;">
+		<div style="float:left;padding:20px;padding-left:30px;padding-top:23px;">
+			<span class="glyphicon glyphicon-user" style="font-size:120px;color:white"></span>
+		</div>
+		<div style="float:right;padding:20px;padding-bottom:10px;">
+			<h1 style="float:right;clear:both;cursor:default;" id="ep-card-name"></h1>
+			<h3 style="float:right;clear:both;margin-top:0px;cursor:default;" id="ep-card-title"></h3>
+			<h3 style="float:right;clear:both;margin-top:0px;cursor:default;" id="ep-card-company"></h3>
+		</div>
+		<div style="float:left;clear:both;padding-left:20px;cursor:default;">
+			<h4 style="cursor:default;">Tel: <span style="cursor:default;" id="ep-card-tel"></span></h4>
+		</div>
+	</div>
+
+	<div style="width:calc(100% - 240px);clear:both;margin-left:90px;margin-right:150px;padding-top:30px;padding-bottom:20px" id="ep-cooperation-table-div">
+		<h4>Business Cooperation: </h4>
+		<table class="table ft greyTrTable tr-hover-table" stype="sf" id="ep-cooperation-table">
+			<thead>
+				<tr>
+					<th sdt="string">Role</th>
+					<th sdt="longstring">Order</th>
+					<th sdt="string">Status</th>
+					<th sdt="datetime">Apply Time</th>
+					<th sdt="datetime">Update Time</th>									
+				</tr>
+			</thead>
+			<tbody id="ep-cooperation-tbody"></tbody>
+		</table>
+	</div>
+
+	<div style="width:calc(100% - 240px);clear:both;margin-left:90px;margin-right:150px;padding-top:30px;padding-bottom:20px" id="ep-task-table-div">
+		<h4>Task: </h4>
+		<table class="table ft greyTrTable tr-hover-table" stype="sf" id="ep-task-table">
+			<thead>
+				<tr>
+					<th sdt="string">Task</th>
+					<th sdt="longstring">Order</th>					
+					<th sdt="datetime">Allocate Time</th>
+					<th sdt="datetime">Finish Time</th>		
+					<th sdt="datetime">Status</th>								
+				</tr>
+			</thead>
+			<tbody id="ep-task-tbody"></tbody>
+		</table>
+	</div>
+
+	<div style="width:calc(100% - 240px);clear:both;margin-left:90px;margin-right:150px;padding-top:30px;padding-bottom:20px" id="ep-operation-table-div">
+		<h4>Operation Record: </h4>
+		<table class="table ft greyTrTable tr-hover-table" stype="sf" id="ep-operation-table">
+			<thead>
+				<tr>
+					<th sdt="string">Operate Time</th>
+					<th sdt="longstring">Order</th>					
+					<th sdt="longstring">Operation</th>									
+				</tr>
+			</thead>
+			<tbody id="ep-operation-tbody"></tbody>
+		</table>
+	</div>
+	<h5></h5>
+
+</div>
+</div>
+</div>

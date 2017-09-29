@@ -1,0 +1,48 @@
+id,		itembatch_id,	whouse_id,	balance,  	place
+1,		1,				1,			40,			Area A-23
+2,		2,				1,			43,			21-C
+3,		3,				1,			6,			Area B
+4,		4,				1,			48,			B56
+5,		5,				1,			3,			Area C
+6,		6,				1,			85,			Area A-2
+7,		8,				1,			81,			Area A
+8,		9,				1,			83,			Area D-43
+9,		10,				1,			99,			Area A
+10,		11,				1,			99,			Area F
+11,		15,				1,			35,			F34
+12,		16,				1,			49,			Area A
+13,		17,				1,			34,			Area A
+14,		18,				1,			84,			Area L
+15,		1,				2,			43,			Area A
+16,		4,				2,			25,			Area M
+17,		5,				2,			18,			Area A_c10
+18,		6,				2,			7,			Area A
+19,		7,				2,			12,			Area A
+20,		8,				2,			28,			Area A
+21,		9,				2,			21,			B_C92
+22,		10,				2,			72,			Area A
+23,		11,				2,			74,			Area A
+24,		12,				2,			89,			Area A
+25,		13,				2,			31,			Area A
+26,		15,				2,			68,			Area A
+27,		2,				3,			37,			Area A
+28,		3,				3,			22,			Area A
+29,		4,				3,			16,			Area A
+30,		6,				3,			16,			746B
+31,		7,				3,			88,			Area A
+32,		8,				3,			60,			Area A
+33,		9,				3,			47,			Area A
+34,		10,				3,			76,			Area A
+35,		14,				3,			68,			Area A
+36,		15,				3,			8,			Area A
+37,		16,				3,			44,			Area A
+38,		3,				4,			34,			02F.B3
+39,		4,				4,			74,			Area A
+40,		6,				4,			73,			Area A
+41,		7,				4,			47,			Area A
+42,		8,				4,			75,			Area A
+43,		14,				4,			14,			Area A
+44,		15,				4,			43,			Area A
+45,		17,				4,			29,			Area A
+46,		18,				4,			64,			Area A
+47,		1,				1,			22,			Area B-11

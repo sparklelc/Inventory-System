@@ -1,0 +1,8 @@
+id,		order_type,		order_id,	task_name,	applyer_cid,	worker_cid,		begin_date, 	apply_time,		finish_time,		status
+1,		1,				186000,		inspection,	1,				0,				,				,				,
+2,		1,				186000,		placing,	1,				0,				,				,				,
+3,		2,				116000,		picking,	3,				0,				,				,				,
+4,		3,				209000,		picking,	3,				0,				,				,				,
+5,		3,				209000,		inspection,	6,				0,				,				,				,
+6,		3,				209000,		placing,	6,				0,				,				,				,
+7,		2,				116001,		picking,	3,				0,				,				,				,

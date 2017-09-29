@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="lib/jquery.js"></script>
+	<link href="css/mbootstrap.css" rel="stylesheet" />	
+	<script src="lib/bootstrap.js"></script>
+	<script src="lib/alasql.js"></script>
+	<script src="js/db.js"></script>	
+	<meta charset="utf-8">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta name="viewport" content="width=device-width">
+	<title>COMPANY IMS</title>
+</head>
+<body style="scroll-x: auto; min-width:1150px;">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" style="cursor:default;">COMPANY</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->			
+			<div class="collapse navbar-collapse" id="navbar-collapse">									
+				<ul class="nav navbar-nav tem-hide" id="nav-home">
+					<li class="active"><a id="homepage-btn" href="javascript:void(0)">Home</a></li>
+				</ul>
+
+
+				<ul class="nav navbar-nav navbar-right tem-hide" id="nav-user">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-user"></span> <span id="index-username"></span> 
+							<!-- <span style="font-size:10px" class="glyphicon glyphicon-chevron-down"></span> -->
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a style="cursor:pointer" id="index-logout">
+									<span class="glyphicon glyphicon-log-out"></span> Logout
+								</a>
+							</li>							
+						</ul>
+					</li>
+				</ul>
+				<!-- <ul class="nav navbar-nav navbar-right">
+					<li><a href="javascript:void(0)"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				</ul> -->
+				<ul class="nav navbar-nav navbar-right tem-hide" id="openFuncBar">
+					<li><a href="javascript:void(0)"><span class="glyphicon glyphicon-th"></span> Function <span style="font-size:10px" class="glyphicon glyphicon-chevron-up"></span></a></li>
+				</ul>
+				<!-- <ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-cog"></span> Settings 
+							<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a onclick="window.location.reload(true);">
+									<span class="glyphicon glyphicon-refresh"></span> Reload
+								</a>
+							</li>
+							<li>
+								<a onclick="DB.init();">
+									<span class="glyphicon glyphicon-repeat"></span> Init DB
+								</a>
+							</li>
+							<li role="separator" class="divider">								
+							</li>
+							<li>
+								<a onclick="DB.remove();">
+									<span class="glyphicon glyphicon-trash"></span> Delete DB
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul> -->
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<div class="container p-relative functionbar-container tem-hide" id="functionbar">
+		<div class="function-bar">
+		<!-- Order management -->
+			<div class="float block leftblock big-block bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Check-in/Check-out/Transfer Order Management">
+				<span class="glyphicon glyphicon-list-alt"></span>
+				<span class="block-name">Order</span>
+			</div>
+			<div class="float block">
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Check in" id="f1-checkin">
+					<span class="glyphicon glyphicon-copy"></span>
+				</div>
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Check out" id="f1-checkout">
+					<span class="glyphicon glyphicon-paste"></span>
+				</div>
+				<!-- <div class="smallblock"></div>
+				<div class="smallblock"></div> -->
+			</div>
+
+			<div class="float block empty-block">
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Transfer" id="f1-transfer">
+					<span class="glyphicon glyphicon-resize-horizontal"></span>
+				</div>
+			</div>
+
+
+		<!-- Operation -->
+			<div class="float block leftblock big-block bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Inventory and Storage">
+				<span class="glyphicon glyphicon-th-large"></span>
+				<span class="block-name">Storage</span>
+			</div>
+			<div class="float block">
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="List in stock" id="f2-liststock">
+					<span class="glyphicon glyphicon-list-alt"></span>
+				</div>
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Warning and alert" id="f2-alert">
+					<span class="glyphicon glyphicon-time"></span>
+				</div>
+			</div>
+
+			<div class="float block empty-block">
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Intelligent Calculation and Suggestion" id="f2-prediction">
+					<span class="glyphicon glyphicon-scale"></span>
+				</div>
+			</div>
+
+
+		<!-- Information management -->
+			<div class="float block leftblock big-block bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Warehouse/Product/Contact Management">
+				<span class="glyphicon glyphicon-globe"></span>
+				<span class="block-name">Manage</span>
+			</div>
+			<div class="float block">
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Warehouse management" id="f3-whouse">
+					<span class="glyphicon glyphicon-home"></span>
+				</div>
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Product management" id="f3-item">
+					<span class="glyphicon glyphicon-th-list"></span>
+				</div>
+			</div>
+
+
+			<div class="float block empty-block">
+				<div class="smallblock top-smallblock bc" type="button" data-toggle="tooltip" data-placement="bottom" title="Contact management" id="f3-contact">
+					<span class="glyphicon glyphicon-user"></span>
+				</div>
+			</div>
+
+		<!-- Settings -->
+			<div class="float block leftblock big-block bc big-block-enable" type="button" data-toggle="tooltip" data-placement="bottom" title="Configuration and Setting" id="f4-setting">
+				<span class="glyphicon glyphicon-cog"></span>
+				<span class="block-name">Setting</span>
+			</div>
+				<!-- <form action="index.html" class="form-inline text-center">
+					<a class="glyphicon glyphicon-cloud" style="color:black"></a>
+					<div class="form-group">
+						<label>Warehouse</label> <select name="q1" class="form-control">
+							<option value="0">All</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Classification</label> <select name="q2" class="form-control">
+							<option value="0">All</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Code</label> <input name="q3" type="text"
+							class="form-control" placeholder="Prefix Search">
+					</div>
+					<button type="submit" class="btn btn-primary">
+						<span class="glyphicon glyphicon-search"></span> Search
+					</button>			
+					<a href="stock-form.html" class="btn btn-sm btn-success pull-right"><span
+							class="glyphicon glyphicon-plus"></span> New
+					</a>
+				</form>		 -->
+		<!-- Divider -->
+			<div class="float block empty-block">				
+			</div>
+
+		<!-- Toolkit -->
+			<div class="float block leftblock big-block bc-t hide" type="button" data-toggle="tooltip" data-placement="bottom" title="Toolkit" id="toolkit-b-1">
+				<span class="glyphicon glyphicon-wrench"></span>
+				<span class="block-name">Operate</span>
+			</div>
+			<div class="float block hide" id="toolkit-b-2">
+				<div id="toolkit1" class="smallblock top-smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+				<div id="toolkit2" class="smallblock top-smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+				<div id="toolkit3" class="smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+				<div id="toolkit4" class="smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+			</div>
+			<div class="float block hide" id="toolkit-b-3">
+				<div id="toolkit5" class="smallblock top-smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+				<div id="toolkit6" class="smallblock top-smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+				<div id="toolkit7" class="smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+				<div id="toolkit8" class="smallblock bc-t" type="button" data-toggle="tooltip" data-placement="bottom" title="">
+					<span class=""></span>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="close-functionbar" id="close-functionbar-btn">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</div>
+	</div>
+
+	<!-- <div class="main-body" name="mainbody">
+		<div class="container" id="bodyer">			
+			....
+		</div> 
+	</div> -->
+
+	<div class="full-grey" id="loading">
+		<div style="width:60px;height:60px;margin-top:50vh; margin-left:45vw;">
+		<div class="loader"></div>
+		</div>
+	</div>
+
+	<div class="information-bar" id="info-bar">
+		<!--  -->		
+	</div>
+
+	<script src="js/index.js"></script>
+</body>
+</html>

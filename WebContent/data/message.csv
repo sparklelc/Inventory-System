@@ -1,0 +1,8 @@
+id,		cid,		message,																					is_read,	is_star,		url,												message_type
+1,		1,			Your check-in application(186000) has been approved.,										0,			0,				check-in-order?id=186000,							12
+2,		4,			Please approve/deny check-out application(116000).,											0,			0,				check-out-order?id=116000,							21	
+3,		4,			Please approve/deny check-out application(116001).,											0,			0,				check-out-order?id=116001,							21	
+4,		4,			Please approve/deny transfer application(209000).,											0,			0,				transfer-order?id=209000,							31	
+5,		4,			The amount of "Core i5-6600K"(z16011) in "Tokyo" is below the minimum alert level.,			0,			0,				stock?id=2,											810
+6,		5,			The amount of "GA-H170M-D3H"(a041) in "Shanghai" is below the minimum alert level.,			0,			0,				stock?id=18,										810
+7,		4,			"Core i5-6600K"(z16011) in "Tokyo" has great risk to be out-of-stock/oversold in future.,	0,			0,				prediction?itembatch_id=2&whouse_id=1,				800
